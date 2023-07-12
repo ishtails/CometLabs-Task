@@ -4,6 +4,8 @@ import morgan from "morgan";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
+import router from './router.js'
+import { getAllProblems, addProblem, editProblem, deleteProblem, addTestcase, updateTestcase } from "./controllers/admin.js";
 
 dotenv.config();
 const app = express();
@@ -34,3 +36,12 @@ app.get("/", (req, res) => {
   });
   
   app.use("/api", router);
+
+
+//TESTING
+// addProblem();
+// editProblem();
+// deleteProblem();
+// addTestcase();
+// updateTestcase();
+// getAllProblems();
