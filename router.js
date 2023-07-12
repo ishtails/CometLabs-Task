@@ -1,4 +1,16 @@
 import { registerUser, loginUser } from "./controllers/auth.js";
+import {
+  addProblem,
+  editProblem,
+  deleteProblem,
+  addTestcase,
+  updateTestcase,
+} from "./controllers/admin.js";
+import {
+  getAllProblems,
+  createSubmission,
+  checkResult,
+} from "./controllers/users.js";
 
 import { Router } from "express";
 const router = Router();
@@ -8,15 +20,15 @@ router.post("/login", loginUser);
 router.post("/register", registerUser);
 
 //ADMIN
-// router.post("/admin/addQ", addQuestion);
-// router.patch("/admin/editQ/:id", editQuestion);
-// router.delete("/admin/deleteQ/:id", deleteQuestion);
-
-// router.post("/admin/addT", addTestcase);
-// router.patch("/admin/editT/:id", editTestcase);
-// router.delete("/admin/deleteT/:id", deleteTestcase);
+router.post("/admin/add-problem", addProblem);
+router.put("/admin/edit-problem/:id", editProblem);
+router.delete("/admin/delete-problem/:id", deleteProblem);
+router.post("/admin/add-testcase/:problemId", addTestcase);
+router.put("/admin/update-testcase/:problemId/:testcaseId", updateTestcase);
 
 //USER
-// router.post("/user/check-answer/:id", checkSolution);
+router.get("/user/all-problems", getAllProblems);
+router.post("/user/submit-solution", createSubmission);
+router.get("/user/submissions/:id", checkResult);
 
 export default router;

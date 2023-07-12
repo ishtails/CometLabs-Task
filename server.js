@@ -4,8 +4,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
-import router from './router.js'
-import { getAllProblems, addProblem, editProblem, deleteProblem, addTestcase, updateTestcase } from "./controllers/admin.js";
+import router from "./router.js";
 
 dotenv.config();
 const app = express();
@@ -32,16 +31,7 @@ mongoose
 
 // Root Route
 app.get("/", (req, res) => {
-    return res.send("CometLabs - Assignment");
-  });
-  
-  app.use("/api", router);
+  return res.send("CometLabs - Assignment");
+});
 
-
-//TESTING
-// addProblem();
-// editProblem();
-// deleteProblem();
-// addTestcase();
-// updateTestcase();
-// getAllProblems();
+app.use("/api", router);
