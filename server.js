@@ -1,10 +1,9 @@
 import express from "express";
-import * as dotenv from "dotenv";
 import cors from "cors";
-import mongoose from "mongoose";
 import morgan from "morgan";
 import helmet from "helmet";
-
+import mongoose from "mongoose";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
@@ -21,7 +20,7 @@ mongoose
   .then(
     app.listen(PORT, () => {
       console.log(
-        `Connected to local MongoDB Server & Listening on http://localhost:${PORT}/`
+        `Connected to MongoDB Server & Listening on http://localhost:${PORT}/`
       );
     })
   )
@@ -31,7 +30,7 @@ mongoose
 
 // Root Route
 app.get("/", (req, res) => {
-    return res.send("Guardian");
+    return res.send("CometLabs - Assignment");
   });
   
   app.use("/api", router);
