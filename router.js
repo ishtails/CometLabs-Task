@@ -11,7 +11,6 @@ import {
   createSubmission,
   checkResult,
 } from "./controllers/users.js";
-
 import { Router } from "express";
 const router = Router();
 
