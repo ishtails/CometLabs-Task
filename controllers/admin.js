@@ -1,19 +1,5 @@
 import axios from "axios";
 
-export const getAllProblems = async () => {  
-    const result = await axios.get(
-      `${process.env.SPHERE_ENDPOINT}/problems`,
-      {
-        params: {
-          access_token: process.env.SPHERE_PROBLEM_TOKEN,
-          limit:5
-        },
-      }
-    );
-  
-    console.log(result.data);
-  };
-
 export const addProblem = async () => {
   const myProblem = {
     name: "myProblem",
