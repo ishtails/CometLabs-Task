@@ -1,5 +1,7 @@
 import users from "../models/userModel.js";
 import jwt from "jsonwebtoken";
+import Joi from 'joi'
+import bcrypt from "bcrypt";
 
 //LOGIN
 export const loginUser = async (req, res) => {
@@ -51,7 +53,7 @@ export const registerUser = async (req, res) => {
     //Request Body Validation
     const registerSchema = Joi.object({
       name: Joi.string().required(),
-      role: Joi.string().required(),
+      role: Joi.string().required().valid("admin", "user"),
       email: Joi.string().email().required(),
       password: Joi.string().pattern(
         new RegExp(
@@ -59,8 +61,8 @@ export const registerUser = async (req, res) => {
         )
       ),
     });
-
     await registerSchema.validateAsync(req.body);
+    
     const { name, email, password, role } = req.body;
 
     // Hash password & save to mongoDB
