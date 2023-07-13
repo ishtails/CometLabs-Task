@@ -28,7 +28,7 @@ router.put("/admin/edit-testcase/:problemId/:testcaseId", isAuth, isAdmin, editT
 
 //USER
 router.get("/user/all-problems", isAuth, getAllProblems);
-router.post("/user/submit-solution", isAuth, createSubmission);
-router.get("/user/submissions/:id", isAuth, checkResult);
+router.post("/user/submit-answer", isAuth, createSubmission);
+router.get("/user/result/:submissionId", isAuth, checkResult);
 
 export default router;
