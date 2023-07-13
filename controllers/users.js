@@ -1,28 +1,27 @@
 import axios from "axios";
-import Joi from 'joi'
+import problems from "../models/problemModel.js";
 
-export const listCompilers = async () => {
-  const result = await axios.get(`${process.env.SPHERE_ENDPOINT}/compilers`, {
-    params: {
-      access_token: process.env.SPHERE_PROBLEM_TOKEN,
-    },
-  });
+export const getAllProblems = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const totalCount = await problems.countDocuments();
+    const totalPages = Math.ceil(totalCount / 10);
 
-  console.log(result.data);
-};
+    const result = await problems
+      .find()
+      .skip((page - 1) * 10)
+      .limit(10);
 
-export const getAllProblems = async () => {  
-  const result = await axios.get(
-    `${process.env.SPHERE_ENDPOINT}/problems`,
-    {
-      params: {
-        access_token: process.env.SPHERE_PROBLEM_TOKEN,
-        limit:5
-      },
-    }
-  );
-
-  console.log(result.data);
+    res.json({
+      page,
+      totalPages,
+      result,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json(error);
+  }
 };
 
 export const createSubmission = async () => {
