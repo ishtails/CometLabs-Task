@@ -1,6 +1,7 @@
 import axios from "axios";
 import problems from "../models/problemModel.js";
 import Joi from "joi";
+import { sendMail } from "../helpers.js";
 
 export const getAllProblems = async (req, res) => {
   try {
@@ -61,7 +62,7 @@ export const checkResult = async (req, res) => {
   try {
     const submissionId = req.params.submissionId;
 
-    const result2 = await axios.get(
+    const result = await axios.get(
       `${process.env.SPHERE_ENDPOINT}/submissions/${submissionId}`,
       {
         params: {
@@ -70,7 +71,16 @@ export const checkResult = async (req, res) => {
       }
     );
 
-    res.status(200).send(result2.data.result);
+    //Send Email
+    const mailOptions = {
+      from: "ishtails@gmail.com",
+      to: req.user.email,
+      subject: `CometLabs - Submission Result`,
+      text: `Submission(${submissionId}) Score: ${result.data.result.score} Status: ${result.data.result.status.name}`,
+    };
+
+    await sendMail(mailOptions);
+    res.status(200).send(result.data.result);
   } catch (error) {
     res.status(500).json(error.message);
   }
