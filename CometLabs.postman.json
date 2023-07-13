@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "4c4fc741-6b7e-443e-b5f4-8d283b428a36",
+		"name": "CometLabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26667583"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Kartik\",\r\n    \"email\":\"kartik100100@gmail.com\",\r\n    \"password\":\"kartik@123\",\r\n    \"role\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/register",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"kartik100100@gmail.com\",\r\n    \"password\":\"kartik@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/login",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Problem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MjMyNTE4LCJleHAiOjE2ODkzMTg5MTh9.pus_8oTmo2iyVSk0ESt4yOvRL0_QMqFHPQ1jKMhzjf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"myProblem\",\r\n    \"body\": \"Description of myProblem\",\r\n    \"typeId\": 0,\r\n    \"masterjudgeId\": 1000,\r\n    \"interactive\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/admin/add-problem",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"admin",
+						"add-problem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Problem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MjMyNTE4LCJleHAiOjE2ODkzMTg5MTh9.pus_8oTmo2iyVSk0ESt4yOvRL0_QMqFHPQ1jKMhzjf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"myProblem_updated\",\r\n    \"body\": \"Description of myProblem updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/admin/edit-problem/<insert problemId here>",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"admin",
+						"edit-problem",
+						"<insert problemId here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Problem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/admin/delete-problem/<insert problemId here>",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"admin",
+						"delete-problem",
+						"<insert problemId here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Testcase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"input_myTestcase_2\",\r\n    \"output\": \"output_myTestcase_2\",\r\n    \"timeLimit\": 1,\r\n    \"judgeId\": 2,\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/admin/add-testcase/<insert problemId here>",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"admin",
+						"add-testcase",
+						"<insert problemId here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Testcase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"input_myTestcase_2_updated\",\r\n    \"output\": \"output_myTestcase_2\",\r\n    \"timeLimit\": 3,\r\n    \"judgeId\": 3,\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/admin/edit-testcase/<insert problemId here>/<insert testcaseNumber here>",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"admin",
+						"edit-testcase",
+						"<insert problemId here>",
+						"<insert testcaseNumber here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Problems",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/user/all-problems?page=1",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"all-problems"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Submission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"problemId\": 116785,\r\n    \"source\": \"int main(){return 0;}\",\r\n    \"compilerId\": 1,\r\n    \"compilerVersionId\": 1,\r\n    \"tests\": \"0\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/user/submit-answer",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"submit-answer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Result",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS2FydGlrIiwiZW1haWwiOiJrYXJ0aWsxMDAxMDBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg5MTc0MDMwLCJleHAiOjE2ODkyNjA0MzB9.9MrMvydgwpSx2L5nqMe1mrtrSX0sImnNevXiREYkUUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"problemId\": 116534,\r\n    \"source\": \"int main(){return 0;}\",\r\n    \"compilerId\": 1,\r\n    \"compilerVersionId\": 1,\r\n    \"tests\": \"0\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cometlabs-api.onrender.com/api/user/result/<insert submissionId here>",
+					"protocol": "https",
+					"host": [
+						"cometlabs-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"result",
+						"<insert submissionId here>"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
