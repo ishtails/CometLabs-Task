@@ -175,7 +175,7 @@ export const editTestcase = async (req, res) => {
 
     await problems.updateOne(
       { problemId, "testcases.testcaseId": testcaseId },
-      { $set: { "testcases.$": {...req.body, problemId} } }
+      { $set: { "testcases.$": {...req.body, testcaseId} } }
     );
 
     return res
