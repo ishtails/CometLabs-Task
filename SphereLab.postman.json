@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/register",
+					"raw": "http://localhost:8000/api/register",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -51,7 +51,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/login",
+					"raw": "http://localhost:8000/api/login",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -91,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/admin/add-problem",
+					"raw": "http://localhost:8000/api/admin/add-problem",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -132,7 +132,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/admin/edit-problem/<insert problemId here>",
+					"raw": "http://localhost:8000/api/admin/edit-problem/<insert problemId here>",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -174,7 +174,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/admin/delete-problem/<insert problemId here>",
+					"raw": "http://localhost:8000/api/admin/delete-problem/<insert problemId here>",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -216,7 +216,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/admin/add-testcase/<insert problemId here>",
+					"raw": "http://localhost:8000/api/admin/add-testcase/<insert problemId here>",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -258,7 +258,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/admin/edit-testcase/<insert problemId here>/<insert testcaseNumber here>",
+					"raw": "http://localhost:8000/api/admin/edit-testcase/<insert problemId here>/<insert testcaseNumber here>",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -304,7 +304,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/user/all-problems?page=1",
+					"raw": "http://localhost:8000/api/user/all-problems?page=1",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -351,7 +351,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/user/submit-answer",
+					"raw": "http://localhost:8000/api/user/submit-answer",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
@@ -395,7 +395,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://cometlabs-api.onrender.com/api/user/result/<insert submissionId here>",
+					"raw": "http://localhost:8000/api/user/result/<insert submissionId here>",
 					"protocol": "https",
 					"host": [
 						"cometlabs-api",
