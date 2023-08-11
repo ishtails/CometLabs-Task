@@ -7,7 +7,7 @@ NOTE: This API requires Sphere Engine API credentials in .env file. Code executi
 ## ScreenShots:
 [Google Drive Link](https://drive.google.com/drive/folders/1V4NBzY4v6_Z8tMh25WYNFR4S1JpzNw5y?usp=sharing)
 
-## API Endpoints
+## API Endpoints:
 Here is a description of each API endpoint:
 <br/>
 **Please note that some URLs contain placeholders `<insert problemId here>`, `<insert testcaseNumber here>`, and `<insert submissionId here>`, which should be replaced with the actual values when making requests to those endpoints.**
