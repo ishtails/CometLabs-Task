@@ -31,7 +31,7 @@ mongoose
 
 // Root Route
 app.get("/", (req, res) => {
-  return res.send("CometLabs - Assignment");
+  return res.send("SphereLabs");
 });
 
 app.use("/api", router);
