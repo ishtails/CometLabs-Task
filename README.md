@@ -1,5 +1,7 @@
 # SphereLab
 
+THIS DEMO IS NOT AVAILABLE CURRENTLY DUE TO EXPIRED ACCESS TO Sphere Engine API. CHECK SCREENSHOTS BELOW
+
 This repository contains a Node.js-Express API for a code execution platform containerized with Docker. The instructions below explain how to use the API.
 
 NOTE: This API requires Sphere Engine API credentials in .env file. Code execution will not work without it [Link](https://sphere-engine.com/signup)
